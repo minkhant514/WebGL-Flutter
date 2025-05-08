@@ -17,30 +17,27 @@ class _LangoLandWebviewState extends State<LangoLandWebview> {
   @override
   void initState() {
     super.initState();
-    webviewService.init(kNetifyHostUrlForLangoland);
+    webviewService.init(kNeedleURL);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBarContent(),
-      body: Padding(
-        padding: const EdgeInsets.all(5),
-        child: _buildWebViewContent(),
-      ),
+      body: _buildWebViewContent(),
     );
   }
 
   PreferredSizeWidget _buildAppBarContent() {
     return AppBar(
-      title: Text("LangoLand Web View"),
+      title: Text("WEB VIEW TEST"),
       centerTitle: true,
     );
   }
 
   Widget _buildWebViewContent() {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(5),
       child: WebViewWidget(
         controller: webviewService.webViewController!,
       ),
